@@ -63,7 +63,7 @@
                 else{
                     this.$axios.post('/schema',{
                         'session':this.$store.getters.Token,
-                        'name':this.new_name,
+                        'name':this.new_name, 
                         'description':this.new_description
                     }).then(res=>{
                         this.$message.info('加入成功')
