@@ -3,9 +3,9 @@
         <el-table :data="questionList" style="width: 100%">
             <el-table-column label="id" prop="id" width="180"> </el-table-column>
 
-            <el-table-column label="标题" prop="title" width="180"> </el-table-column>
+            <el-table-column label="Title" prop="title" width="180"> </el-table-column>
 
-            <el-table-column  label="分数" prop="score" width="180"> </el-table-column>
+<!--            <el-table-column  label="Score" prop="score" width="180"> </el-table-column>-->
 
             <el-table-column label="database" width="180">
                 <template slot-scope="scope">
@@ -19,22 +19,22 @@
                 </template>
             </el-table-column>
 
-            <el-table-column label="最好成绩">
-                <template slot-scope="scope">
-                    <el-popover trigger="hover" placement="top">
-                        <p>id: {{ scope.row.max_score.id }}</p>
-                        <p>type: {{ scope.row.max_score.type }}</p>
-                        <p>score: {{ scope.row.max_score.score }}</p>
-                        <div slot="reference" class="name-wrapper">
-                            <el-tag size="medium" :type="scope.row.tag">{{ scope.row.max_score.type }}</el-tag>
-                        </div>
-                    </el-popover>
-                </template>
-            </el-table-column>
+<!--            <el-table-column label="Best Grade">-->
+<!--                <template slot-scope="scope">-->
+<!--                    <el-popover trigger="hover" placement="top">-->
+<!--                        <p>id: {{ scope.row.max_score.id }}</p>-->
+<!--                        <p>type: {{ scope.row.max_score.type }}</p>-->
+<!--                        <p>score: {{ scope.row.max_score.score }}</p>-->
+<!--                        <div slot="reference" class="name-wrapper">-->
+<!--                            <el-tag size="medium" :type="scope.row.tag">{{ scope.row.max_score.type }}</el-tag>-->
+<!--                        </div>-->
+<!--                    </el-popover>-->
+<!--                </template>-->
+<!--            </el-table-column>-->
 
-            <el-table-column label="opt">
+            <el-table-column label="Solve">
                 <template slot-scope="scope">
-                    <el-button size="mini" @click="handleSubmit(scope.$index, scope.row)">做题</el-button>
+                    <el-button size="mini" @click="handleSubmit(scope.$index, scope.row)">Solve</el-button>
                 </template>
             </el-table-column>
         </el-table>

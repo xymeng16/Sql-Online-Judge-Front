@@ -45,7 +45,7 @@
 
     <el-form ref="newAnswerForm" :model="newAnswerForm">
       <el-form-item label="sql">
-        <el-input v-model="newAnswerForm.sql"></el-input>
+        <el-input type="textarea" v-model="newAnswerForm.sql"></el-input>
       </el-form-item>
 
       <el-form-item>
@@ -87,6 +87,7 @@ export default {
     },
     addAnswer() {
       this.newAnswerForm['session'] = this.$store.getters.Token
+      // eslint-disable-next-line no-unused-vars
       this.$axios.post('/question/' + this.idQuestion + '/answer', this.newAnswerForm).then(res => {
         this.$message.success('成功')
         this.getAnswerList()
@@ -127,6 +128,7 @@ export default {
       })
     },
     handleEditSegment(index, row) {
+      // eslint-disable-next-line no-console
       console.log(row)
       if (row.edit) {
         this.$axios.patch('/answer/' + row.id + '/segment/' + row.id, {
@@ -134,6 +136,7 @@ export default {
           'data': row.data,
           'extra': row.extra,
           'score': row.score
+          // eslint-disable-next-line no-unused-vars
         }).then((res) => {
           row.edit = false
           this.$message.success('done')
@@ -143,6 +146,7 @@ export default {
         })
       } else {
         row.edit = true
+        // eslint-disable-next-line no-console
         console.log(index)
         this.$set(this.segments, index, row)
       }
